@@ -1,0 +1,12 @@
+{% extends 'movie_082/base.html' %}
+{% load static %}
+{% block content%}
+<center><div class="p-5">
+<form action="" enctype='multipart/form-data'  method="POST" >
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Add" class="btn btn-success"/>
+</form>
+</div>
+</center>
+{% endblock %}

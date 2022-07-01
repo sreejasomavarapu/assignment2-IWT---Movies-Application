@@ -1,0 +1,16 @@
+{% extends 'movie_082/base.html' %}
+{% load static %}
+{% block content%}
+<center>
+<div class="p-5">
+    <div class="pb-2">
+    Update rating of {{name}}
+</div>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="btn btn-secondary">
+</form>
+</div>
+</center>
+{% endblock %}

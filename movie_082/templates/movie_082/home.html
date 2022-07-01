@@ -1,0 +1,36 @@
+
+{% extends 'movie_082/base.html' %}
+{% load static %}
+{% block content%}
+
+<h1 align="center" class="pt-2">MOVIES</h1>
+<a href="{% url 'add' %}" class="btn btn-success ms-5">Add a movie</a>
+<div class="p-5">
+<table class="table table-dark table-striped">
+    <tr>
+        <td>Name</td>
+        <td>Hero</td>
+        <td>Heronie</td>
+        <td>Director</td>
+        <td>Release Date</td>
+        <td>Rating (out of 10)</td>
+        <td>Image</td>
+        <td></td>
+    </tr>
+    {% for movie in movies %}
+    <tr>
+        <td style="vertical-align: middle;">{{movie.name}}</td>
+        <td style="vertical-align: middle;">{{movie.hero}}</td>
+        <td style="vertical-align: middle;">{{movie.heroine}}</td>
+        <td style="vertical-align: middle;">{{movie.director}}</td>
+        <td style="vertical-align: middle;">{{movie.release_date}}</td>
+        <td style="vertical-align: middle;">{{movie.rating}}</td>
+        <td><img src="{{ movie.img.url }}" alt="" height="120px"></td>
+        <td style="vertical-align: middle;"><a href="{% url 'update' movie.id %}" class="btn btn-primary">Update</a></td>
+    </tr>
+    
+    {% endfor %}
+    
+</table>
+</div>
+{% endblock %}
